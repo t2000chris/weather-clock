@@ -1,0 +1,13 @@
+[Unit]
+Description=Weather Clock
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/weather-clock/weather-clock.py
+User=pi
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
